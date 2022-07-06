@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Start-page (index)
+{% endblock %}
+
+{% block main %}
+
+    <h2>Welcome</h2>
+
+    <h4>Your holdings</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Currenct Price</th>
+                <th>Totalt Worth</th>
+            </tr>
+        </thead>
+         <tbody>
+            {% for nr in range(nr_stocks) %}
+            <tr>
+                <th>{{ portfolio[nr].get("name") }}</th>
+                <th>{{ portfolio[nr].get("symbol") }}</th>
+                <th>{{ portfolio[nr].get("shares") }}</th>
+                <th>{{ current_price[nr] | usd }}</th>
+                <th>{{ tot_stock_worth_list[nr] }} </th>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfooter>
+            <tr>
+                <th>Total worth of cash and stocks at current value:</th>
+                <th></th>
+                <th></th>
+                <th>{{ current_cash | usd }}</th>
+                <th>{{ tot_usd }}</th>
+            </tr>
+        </tfooter>
+  ...
+    </table>
+
+
+
+
+{% endblock %}

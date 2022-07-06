@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History (index)
+{% endblock %}
+
+{% block main %}
+
+    <h2>History</h2>
+
+    <h4>Your Buys and Sells</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Buy or Sell</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>A-price</th>
+                <th>Total worth</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+            {% for transaction in transactions %}
+            <tr>
+                <th>{{ transaction.get("transtype") }}</th>
+                <th>{{ transaction.get("symbol") }}</th>
+                <th>{{ transaction.get("shares") }}</th>
+                <th>{{ transaction.get("aprice") }}</th>
+                <th>{{ transaction.get("tot_price") }}</th>
+                <th>{{ transaction.get("date") }}</th>
+                <th>{{ transaction.get("time") }}</th>
+            </tr>
+            {% endfor %}
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+
+
+{% endblock %}

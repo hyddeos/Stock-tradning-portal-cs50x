@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Start-page (index)
+{% endblock %}
+
+{% block main %}
+
+    <h2>Sell</h2>
+
+    <form action="/sell" method="POST">
+        <div class="mb-3">
+            <label for="buy">What stock do you wanna sell?</label><br>
+            <select name="symbol">
+            <option disabeled selected>Choose Stock to Sell</option>
+            {% for stock in portfolio %}
+                <option value="{{ stock.get("symbol") }}">{{ stock.get("name") }}</option>
+            {% endfor %}
+        </div>
+        <div class="mb-3">
+            <label for="shares">How many shares do you want to sell?</label>
+            <input class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="shares" type="number" min="1">
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+
+{% endblock %}

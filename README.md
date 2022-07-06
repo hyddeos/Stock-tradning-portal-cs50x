@@ -3,4 +3,4 @@
 
 My solution to the Finance problem in the cs50x Introduction to Computer Science course.
 
-For a full description of the exercise visit [CS50x problem 9](Introduction to Computer Science)
+For a full description of the exercise visit [CS50x problem 9](https://cs50.harvard.edu/x/2022/psets/9/finance/)
